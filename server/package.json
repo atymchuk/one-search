@@ -1,7 +1,7 @@
 {
-  "name": "ng-search",
+  "name": "one-search",
   "version": "1.0.0",
-  "description": "Mock server for testing ng-search",
+  "description": "Mock server for testing one-search angular directive",
   "main": "server.js",
   "directories": {},
   "scripts": {
