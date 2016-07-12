@@ -10,9 +10,9 @@
         var vm = this;
         var hideTimer = null;
         var searchTimer = null;
+        var lastSearch = null;
 
         // init scope vars
-        vm.lastSearchTerm = null;
         vm.currentIndex = null;
         vm.searching = false;
         vm.throttle = vm.throttle || 300;
@@ -54,7 +54,7 @@
             }
             // clearing the search string may not be necessary
             vm.searchStr = '';
-            vm.lastSearchTerm = result.value;
+            lastSearch = result.value;
             // check if already selected
             var found = vm.selected.some(function(el) {
                 return el.value === result.value;
@@ -151,10 +151,10 @@
             if (!~[38, 40, 13].indexOf(event.which)) {
                 if (!vm.searchStr) {
                     vm.showDropdown = false;
-                    vm.lastSearchTerm = null;
+                    lastSearch = null;
                 } 
-                else if (needsNewSearch(vm.searchStr, vm.lastSearchTerm)) {
-                    vm.lastSearchTerm = vm.searchStr;
+                else if (needsNewSearch(vm.searchStr, lastSearch)) {
+                    lastSearch = vm.searchStr;
                     vm.showDropdown = true;
                     vm.currentIndex = -1;
                     vm.results = [];
