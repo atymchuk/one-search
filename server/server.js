@@ -22,7 +22,7 @@ app.get('/country', function(req, res) {
     const searchStr = (req.query.search || '').toLowerCase();
     const countries = data.reduce((res, item) => {
         const countryName = item.name.toLowerCase();
-        const country = { name: item.name, code: item.code };
+        const country = { name: item.name, isoCode: item.code };
         return countryName.indexOf(searchStr) === 0 ? res.concat(country) : res;
     }, []);
     res.json(countries);
@@ -52,7 +52,7 @@ function logErrors(err, req, res, next) {
 }
 
 function errorHandler(err, req, res) {
-    // check err.code
+    // treat all other errors as being 500
     if (req.xhr) {
         res.status(500).json({ error: `Unhandled server error.` });
     } else {

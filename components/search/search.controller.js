@@ -84,12 +84,10 @@
                         );
                     }
 
-                    var resultRow = {
+                    vm.results.push({
                         value: displayValue,
                         id: id
-                    };
-
-                    vm.results.push(resultRow);
+                    });
                 });
 
             } else {

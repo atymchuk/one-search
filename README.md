@@ -27,9 +27,10 @@ The server should be running on your host machine's port #8888.
               submitUrl="http://myserver.com/selectedCountries"
               searchfield="name"
               displayfield="name"
-              valuefield="code"
+              idfield="isoCode"
               minlength="2"
-              inputclass="form-control"/>
+              matchclass="search-highlight"
+              inputclass="search-control"/>
 ```
 
 ### Remotely supplied data source
@@ -37,11 +38,11 @@ The server should be running on your host machine's port #8888.
 ```html
 <one-search id="members"
               placeholder="Search members"
-              throttle="400"
+              throttle="100"
               url="http://myserver.com/api/members/find?s="
               submitUrl="http://myserver.com/api/members"
               searchfield="fullName"
               displayfield="fullName"
-              valuefield="employeeId"
-              inputclass="form-control"/>
+              idfield="employeeId"
+              inputclass="search-control"/>
 ```
