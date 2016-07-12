@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ONE Search</title>
+        <meta name='viewport' content='width=device-width,initial-scale=1'>
+        <link rel="stylesheet" href="app.css"/>
+        <link rel="stylesheet" href="components/search/search.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i">
+    </head>
+	<body ng-app="app">
+        <h1>ONE-search for AngularJS 1.5</h1>
+        <h3>A configurable search directive (autocomplete)</h3>
+
+        <div class="mt30 container">
+            <one-search id="search-country-1" 
+                fieldlabel="World countries"
+                placeholder="Search countries"
+                throttle="200"
+                url="https://ng-search-atymchuk.c9users.io/country?search="
+                submiturl="https://ng-search-atymchuk.c9users.io/selectedCountries"
+                searchfield="name" 
+                displayfield="name"
+                idfield="code"
+                minlength="2" 
+                inputclass="search-control" 
+                matchclass="search-highlight" />
+                <!--set `localdata="countries"` for local mock data-->
+        </div>
+        <script src="vendor/angular/angular.min.js"></script>
+        <script src="components/search/search.controller.js"></script>
+        <script src="components/search/search.directive.js"></script>
+	</body>
+</html>

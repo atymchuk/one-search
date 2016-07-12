@@ -1,0 +1,25 @@
+{
+  "name": "ng-search",
+  "version": "1.0.0",
+  "homepage": "https://github.com/atymchuk/ng-search",
+  "authors": [
+    "Alex Tymchuk <alexander.tymchuk@gmail.com>"
+  ],
+  "description": "Search directive for AngularJS",
+  "keywords": [
+    "autocomplete",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "main": "./index.html",
+  "ignore": [
+    "bower_components",
+    "node_modules"
+  ],
+  "dependencies": {
+    "angular": ">=1.5.0"
+  },
+  "devDependencies": {
+    "angular-mocks": ">=1.5.0"
+  }
+}

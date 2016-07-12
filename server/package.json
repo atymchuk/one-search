@@ -1,0 +1,22 @@
+{
+  "name": "ng-search",
+  "version": "1.0.0",
+  "description": "Mock server for testing ng-search",
+  "main": "server.js",
+  "directories": {},
+  "scripts": {
+    "start": "node server"
+  },
+  "keywords": [
+    "mock",
+    "node.js"
+  ],
+  "author": "Alexander Tymchuk <alexander.tymchuk@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6"
+  },
+  "devDependencies": {}
+}

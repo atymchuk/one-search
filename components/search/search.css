@@ -1,0 +1,135 @@
+.search-wrapper {
+    position: relative;
+}
+
+.search-control {
+    outline: 0;
+    border-color: #ECECEC;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffffff;
+    width: 100%;
+    text-indent: 6px;
+    border-radius: 0;
+    margin-bottom: 5px;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+.search-label {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    color: blue;
+}
+
+.search-dropdown {
+    border-color: #ececec;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0;
+    width: 100%;
+    padding: 6px;
+    cursor: pointer;
+    z-index: 999999;
+    position: absolute;
+    margin-top: -6px;
+    background-color: #ffffff;
+    box-shadow: 3px 5px 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+.search-state__searching {
+    color: #acacac;
+    font-size: 14px;
+}
+
+.search-row {
+    padding: 5px;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.search-row__selected, .search-row:hover {
+    background-color: lightblue;
+    color: #ffffff;
+}
+
+.search-highlight {
+	color: #ff0000;
+}
+
+.search-submit-btn {
+    border-style: none;
+    font-size: 14px;
+    text-align: center;
+    text-indent: 0;
+    margin: 10px 10px 10px 0;
+    border-radius: 2px;
+    padding: 8px 10px;
+    cursor: pointer;
+    min-width: 100px;
+    color: white;
+    background-color: #98de2c;
+}
+
+.search-submit-btn:focus {
+    border-style: none;
+    outline-style: none;
+}
+
+.search-submit-btn:disabled {
+    background-color: #d8d8d8;
+    cursor: not-allowed;
+}
+
+.search-selected-container {
+    margin-top: 10px;    
+}
+
+.search-selected-title {
+    margin-bottom: 4px;
+}
+
+.search-selected-items {
+    list-style-type: none;   
+    padding: 0;
+    margin: 0;
+}
+
+.search-selected-item {
+    position: relative;
+    padding: 5px 4px;
+    border: 1px dotted #ccc;
+    border-top: 0;
+}
+
+.search-selected-item:first-child {
+    border-top: 1px dotted #ccc;
+}
+
+.search-selected-item-value {
+    padding-left: 4px;
+}
+
+.search-delete-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.search-delete-icon:after {
+    position: absolute;
+    content: '\d7';
+    right: 0;
+    top: 0;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    border-left: 1px dotted #ccc;
+    background-color: rgba(204,204,205,.15);
+    transition: all ease-in-out .3s;
+}
+.search-delete-icon:hover:after {
+    background-color: rgba(204,204,205,.7);
+}
+

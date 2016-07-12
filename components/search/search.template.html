@@ -1,0 +1,39 @@
+<div class="search-wrapper">
+    <label class="search-label">{{vm.fieldLabel}}</label>
+    <input id="{{vm.id}}_value" 
+            ng-model="vm.searchStr" 
+            type="text" 
+            placeholder="{{vm.placeholder}}" 
+            class="{{vm.inputClass}}" 
+            onmouseup="this.select();" 
+            ng-focus="vm.resetHideResults()" 
+            ng-blur="vm.hideResults()" />
+    <div id="{{vm.id}}_dropdown" class="search-dropdown" ng-if="vm.showDropdown">
+        <div class="search-state__searching" ng-show="vm.searching">Searching...</div>
+        <div class="search-state__searching" ng-show="!vm.searching && (!vm.results || !vm.results.length)">No results found</div>
+        <div class="search-row"
+                ng-repeat="result in vm.results track by $index" 
+                ng-mousedown="vm.selectResult(result)"
+                ng-mouseover="vm.hoverRow($index)"
+                ng-class="{'search-row__selected': $index == vm.currentIndex}">
+            <div class="search-value" ng-if="vm.matchClass" ng-bind-html="result.value"></div>
+            <div class="search-value" ng-if="!vm.matchClass">{{ result.value }}</div>
+        </div>
+    </div>
+    <div class="search-selected-container" ng-if="vm.selected.length">
+        <div class="search-selected-title">Selected countries</div>
+        <ul class="search-selected-items">
+            <li class="search-selected-item" ng-repeat="item in vm.selected track by $index">
+                <span class="search-selected-item-value">{{ item.value }}</span>
+                <i ng-click="vm.removeSelected($index)" class="search-delete-icon"></i>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <button type="submit" 
+                class="search-submit-btn" 
+                ng-click="vm.submit($event)" 
+                ng-disabled="!vm.selected.length || vm.isSubmitting">Submit</button>
+        <span ng-if="vm.submitInfo" class="search-submit-info">{{ vm.submitInfo }}</span>
+    </div>
+</div>
