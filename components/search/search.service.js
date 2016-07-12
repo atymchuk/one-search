@@ -5,8 +5,8 @@
         .module('app')
         .service('SearchService', SearchService);
 
-    SearchService.$inject = ['$http', '$q'];
-    function SearchService($http, $q) {
+    SearchService.$inject = ['$http'];
+    function SearchService($http) {
         var store = {};
         
         init();
